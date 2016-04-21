@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>发布商品</title>
+    <link rel="stylesheet" href="/admin/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/admin/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="/admin/css/matrix-style2.css" />
+	<link rel="stylesheet" href="/admin/css/matrix-media.css" />
+	<link href="/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" type="text/css" href="/admin/js/webuploader/css/webuploader.css" />
+    <link rel="stylesheet" type="text/css" href="/admin/js/webuploader/css/style.css" />
+
+    <link href="/admin/js/editor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    
+    
+</head>
+<body>
+<div id="content">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title"><span class="icon"><i class="icon-bookmark"></i></span>
+            			<h5>商品发布</h5>
+          			</div> 
+					<div class="widget-content nopadding">
+						<form method="post" id="item" class="form-horizontal">
+				            <div class="control-group">
+				              <label class="control-label"><strong>标题 :</strong></label>
+				              <div class="controls">
+				                <input type="text" name="title" id="title" class="span11" placeholder="标题"/>
+				              </div>
+				              <label class="control-label"><strong>商品类型 :</strong></label>
+				              <div class="controls">
+				              	<select name="type" id="type">
+							  		<option value ="数码3C">数码3C</option>
+							  		<option value ="生活用品">生活用品</option>
+							  		<option value="运动用品">运动用品</option>
+								</select>
+				              </div>
+				              <label class="control-label"><strong>所需积分 :</strong></label>
+				              <div class="controls">
+				                <input type="text" name="price" id="price" class="span11"/>
+				              </div>
+				              <label class="control-label"><strong>库存数量 :</strong></label>
+				              <div class="controls">
+				                <input type="text" name="num" id="num" class="span11"/>
+				              </div>
+				              <label class="control-label"><strong>预警值 :</strong></label>
+				              <div class="controls">
+				                <input type="text" name="storeNum" id="storeNum" class="span11"/>
+				              </div>
+				              <input type="hidden" name="info" id="info">
+							  <input type="hidden" name="mainfile" id="mainfile">
+				              <label class="control-label"><strong>商品图片 :</strong></label>
+				              <div class="controls">
+				                <div id="wrapper">
+							        <div id="container">
+							            <div id="uploader">
+							                <div class="queueList">
+							                    <div id="dndArea" class="placeholder">
+							                        <div id="filePicker"></div>
+							                    </div>
+							                </div>
+							                <div class="statusBar" style="display:none">
+							                    <!-- <div class="progress">
+							                        <span class="text">0%</span>
+							                        <span class="percentage"></span>
+							                    </div> -->
+							                    <div class="btns">
+							                        <div id="filePicker2"></div>
+							                    </div>
+							                    <div class="info"></div>
+							                </div>
+							            </div>
+							        </div>
+					    		</div>
+				              </div>
+				              <label class="control-label"><strong>商品描述 :</strong></label>
+				              <div class="controls">
+				                <script type="text/plain" id="myEditor" style="width:1000px;height:240px;"><p>请填写商品描述</p></script>
+				              </div>    
+				            </div>
+				            <div class="controls">
+				                <div class="btns">
+									<div class="uploadBtn" id="start" onclick="getContent()">开始上传</div>
+								</div>   
+				            </div>
+          				</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script src="/admin/js/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/admin/js/editor/umeditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/admin/js/editor/umeditor.min.js"></script>
+	<script type="text/javascript" src="/admin/js/editor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" src="/admin/js/webuploader/js/webuploader.js"></script>
+    <script type="text/javascript" src="/admin/js/webuploader/js/upload.js"></script>
+    <script type="text/javascript">
+    //实例化编辑器
+    var um = UM.getEditor('myEditor');
+    //按钮的操作
+    function createEditor() {
+        enableBtn();
+        um = UM.getEditor('myEditor');
+    }
+    function getContent() {
+        $("#info").val(UM.getEditor('myEditor').getContent());
+    }
+	</script>
+</body>
+</html>

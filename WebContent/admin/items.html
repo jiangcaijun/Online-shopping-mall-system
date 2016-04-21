@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品信息</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap-table.css">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap-editable.css">
+    <script src="/admin/js/jquery.min.js"></script>
+    <script src="/admin/bstable/js/bootstrap.min.js"></script>
+    <script src="/admin/bstable/js/ga.js"></script>
+    
+    <link href="/admin/js/editor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="/admin/js/editor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/admin/js/editor/umeditor.min.js"></script>
+    <script type="text/javascript" src="/admin/js/editor/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>商品信息 </h1>
+    <div id="toolbar">
+        <button id="up" class="btn btn-primary" disabled>
+            <i class="glyphicon glyphicon-ok"></i> 商品上架
+        </button>
+        <button id="down" class="btn btn-danger" disabled>
+            <i class="glyphicon glyphicon-remove"></i> 商品下架
+        </button>
+        <button id="edit" class="btn btn-warning" disabled data-toggle="modal" data-target="#exampleModal">
+            <i class="glyphicon glyphicon-remove"></i> 商品编辑
+        </button>
+    </div>
+    <table id="table"
+           data-toolbar="#toolbar"
+           data-search="true"
+           data-show-refresh="true"
+           data-show-toggle="true"
+           data-show-columns="true"
+           data-show-export="true"
+           data-detail-view="true"
+           data-detail-formatter="detailFormatter"
+           data-minimum-count-columns="2"
+           data-show-pagination-switch="true"
+           data-pagination="true"
+           data-id-field="id"
+           data-page-list="[10, 25, 50, 100, ALL]"
+           data-show-footer="false"
+           data-side-pagination="server"
+           data-url="/item?action=item_list"
+           data-response-handler="responseHandler">
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <label class="control-label"><strong>商品描述 :</strong></label>
+        <div class="controls">
+          <script type="text/plain" id="myEditor" style="width:569px;height:240px;"></script>
+        </div>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save()">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/admin/bstable/js/item.js"></script>
+</body>
+</html>

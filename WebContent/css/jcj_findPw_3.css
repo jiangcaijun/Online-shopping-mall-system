@@ -1,0 +1,182 @@
+@charset "UTF-8"; 
+
+.verify-help-title {
+	height: 50px;
+	width: 340px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	position: relative;
+	padding-left: 110px
+}
+
+.verify-help-title .title {
+	font-size: 18px;
+	color: #333
+}
+
+.verify-help-title .title-singleline {
+	line-height: 50px
+}
+
+.verify-help-title .sub-title {
+	font-size: 12px;
+	color: #999
+}
+
+.verify-help-title .mail-service-link {
+	color: #2bb8aa
+}
+
+.verify-help-title .tip-status {
+	position: absolute;
+	top: 50%;
+	left: 46px;
+	margin-top: -25px;
+	width: 50px
+}
+
+.verify-cont {
+	border: 1px solid #ddd;
+	padding: 50px 20px;
+	background: #fff
+}
+
+.bind-tips {
+	position: absolute;
+	left: 390px;
+	top: 8px;
+	border: 1px solid #FFECCC;
+	padding: 8px;
+	width: 180px;
+	font-size: 12px;
+	background: #FFEBD7
+}
+
+.resend-tip {
+	margin: 0 auto 30px;
+	padding: 20px;
+	width: 340px
+}
+
+.resend-tip__list {
+	font-size: 12px;
+	color: #666
+}
+
+.resend-tip__list .resend-email-button {
+	margin: 5px 0 10px
+}
+
+.resend-tip__list li {
+	list-style: disc inside
+}
+
+.form-field {
+	margin: 0 auto 14px;
+	width: 340px
+}
+
+.form-field select {
+	width: 260px
+}
+
+.form-field .inline-tip {
+	position: absolute;
+	width: 300px
+}
+
+.next-step {
+	margin-right: 15px
+}
+
+.secure-questions .form-field {
+	padding-top: 0;
+	margin-bottom: 7px
+}
+
+.identity-questions {
+	padding: 0 65px
+}
+
+.identity-questions h2 {
+	margin-bottom: 20px;
+	font-size: 22px;
+	font-weight: 400
+}
+
+.identity-questions .auth-row {
+	margin-bottom: 50px
+}
+
+.identity-questions .form-field {
+	margin: 0 auto 14px;
+	padding-left: 160px;
+	width: auto
+}
+
+.identity-questions .form-field label {
+	width: 150px
+}
+
+.identity-questions .form-field label.normal {
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	padding-top: 6px;
+	padding-right: 20px;
+	font-size: 14px;
+	line-height: 21px
+}
+
+.identity-questions .form-field label input[type=radio] {
+	margin-top: -4px;
+	vertical-align: middle
+}
+
+.identity-questions .form-field select {
+	width: 260px
+}
+
+.identity-questions .form-field .f-text {
+	width: 290px
+}
+
+.identity-questions .form-field .inline-tip {
+	position: absolute;
+	width: 300px
+}
+
+.identity-questions .form-field .block-tip {
+	left: 160px;
+	color: #999
+}
+
+.identity-questions .form-field--tp .form-field-title {
+	margin-left: -160px;
+	margin-bottom: 8px
+}
+
+.identity-questions .form-field--tp .block-tip {
+	top: 75px
+}
+
+.identity-questions .error-tip {
+	display: inline-block;
+	*display: inline;
+	margin-left: 4px;
+	padding: 6px 0;
+	line-height: 24px;
+	font-size: 12px;
+	color: #999;
+	vertical-align: top;
+	zoom: 1
+}
+
+.identity-questions .block-error-tip {
+	display: block;
+	margin-left: 0
+}
+
+.identity-questions .actions-wrapper {
+	margin-top: 40px
+}

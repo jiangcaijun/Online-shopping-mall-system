@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>权限管理</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap-table.css">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap-editable.css">
+    <script src="/admin/js/jquery.min.js"></script>
+    <script src="/admin/bstable/js/bootstrap.min.js"></script>
+    <script src="/admin/bstable/js/ga.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>权限管理 </h1>
+    <div id="toolbar">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        	<i class="glyphicon glyphicon-plus"></i>分配权限
+        </button>
+        <button id="remove" class="btn btn-danger" disabled>
+            <i class="glyphicon glyphicon-remove"></i> 删除权限
+        </button>
+    </div>
+    <table id="table"
+           data-toolbar="#toolbar"
+           data-search="true"
+           data-show-refresh="true"
+           data-show-toggle="true"
+           data-show-columns="true"
+           data-show-export="true"
+           data-detail-view="false"
+           data-detail-formatter="detailFormatter"
+           data-minimum-count-columns="2"
+           data-show-pagination-switch="true"
+           data-pagination="true"
+           data-id-field="id"
+           data-page-list="[10, 25, 50, 100, ALL]"
+           data-show-footer="false"
+           data-side-pagination="server"
+           data-url="/sms?action=role_list&&auth=-1"
+           data-response-handler="responseHandler">
+    </table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">分配权限</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">员工编号</label>
+            <input type="text" class="form-control" id="uid">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">权限编号</label>
+            <input type="text" class="form-control" id="authId">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save()">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="delcfmModel">  
+  <div class="modal-dialog">  
+    <div class="modal-content message_align">  
+      <div class="modal-header">  
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>  
+        <h4 class="modal-title">提示信息</h4>  
+      </div>  
+      <div class="modal-body">  
+        <p>您确认要删除吗？</p>  
+      </div>  
+      <div class="modal-footer">  
+         <input type="hidden" id="url"/>  
+         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
+         <button id="confirm" type="button" class="btn btn-warning" data-dismiss="modal">确定</button> 
+      </div>
+	</div>
+  </div>
+</div>
+<script src="/admin/bstable/js/role.js"></script>
+</body>
+</html>

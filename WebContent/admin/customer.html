@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>员工管理</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap-table.css">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap-editable.css">
+    <script language="javascript" src="/admin/js/jquery.min.js"></script>
+    <script src="/admin/bstable/js/bootstrap.min.js"></script>
+    <script src="/admin/bstable/js/ga.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>客户管理 </h1>
+    <div id="toolbar">
+        <button id="find" class="btn btn-primary" disabled>
+        	<i class="glyphicon glyphicon-plus"></i>解冻
+        </button>
+        <button id="remove" class="btn btn-danger" disabled>
+            <i class="glyphicon glyphicon-remove"></i>冻结客户
+        </button>
+    </div>
+    <table id="table"
+           data-toolbar="#toolbar"
+           data-search="true"
+           data-show-refresh="true"
+           data-show-toggle="true"
+           data-show-columns="true"
+           data-show-export="true"
+           data-detail-view="false"
+           data-detail-formatter="detailFormatter"
+           data-minimum-count-columns="2"
+           data-show-pagination-switch="true"
+           data-pagination="true"
+           data-id-field="id"
+           data-page-list="[10, 25, 50, 100, ALL]"
+           data-show-footer="false"
+           data-side-pagination="server"
+           data-url="/user?action=user_list&&auth=0"
+           data-response-handler="responseHandler">
+    </table>
+</div>
+
+<script src="/admin/bstable/js/customer.js"></script>
+</body>
+</html>

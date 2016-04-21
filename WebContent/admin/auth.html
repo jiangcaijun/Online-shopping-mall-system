@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>权限管理</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap-table.css">
+    <link rel="stylesheet" href="/admin/bstable/css/bootstrap-editable.css">
+    <script src="/admin/js/jquery.min.js"></script>
+    <script src="/admin/bstable/js/bootstrap.min.js"></script>
+    <script src="/admin/bstable/js/ga.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>权限管理 </h1>
+    <div id="toolbar">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        	<i class="glyphicon glyphicon-plus"></i>分配权限
+        </button>
+        <button id="remove" class="btn btn-danger" disabled>
+            <i class="glyphicon glyphicon-remove"></i> 删除权限
+        </button>
+    </div>
+    <table id="table"
+           data-toolbar="#toolbar"
+           data-search="true"
+           data-show-refresh="true"
+           data-show-toggle="true"
+           data-show-columns="true"
+           data-show-export="true"
+           data-detail-view="false"
+           data-detail-formatter="detailFormatter"
+           data-minimum-count-columns="2"
+           data-show-pagination-switch="true"
+           data-pagination="true"
+           data-id-field="id"
+           data-page-list="[10, 25, 50, 100, ALL]"
+           data-show-footer="false"
+           data-side-pagination="server"
+           data-url="/sms?action=auth_list&&auth=-1"
+           data-response-handler="responseHandler">
+    </table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">新增权限</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">权限编号</label>
+            <input type="text" class="form-control" id="authId">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">拥有权限</label>
+            <select id="authUrl">
+			  <option value ="items.html">商品信息</option>
+			  <option value ="additem.html">发布商品</option>
+			  <option value="auth.html">权限管理</option>
+			  <option value="staff.html">员工管理</option>
+			  <option value="customer.html">客户管理</option>
+			  <option value="role.html">权限分配</option>
+			  <option value="log.html">日志管理</option>
+			  <option value="exchange.html">兑换记录</option>
+			  <option value="likeform.html">顾客喜好分析</option>
+			  <option value="classifyform.html">商品分类统计</option>
+			</select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save()">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="delcfmModel">  
+  <div class="modal-dialog">  
+    <div class="modal-content message_align">  
+      <div class="modal-header">  
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>  
+        <h4 class="modal-title">提示信息</h4>  
+      </div>  
+      <div class="modal-body">  
+        <p>您确认要删除吗？</p>  
+      </div>  
+      <div class="modal-footer">  
+         <input type="hidden" id="url"/>  
+         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
+         <button id="confirm" type="button" class="btn btn-warning" data-dismiss="modal">确定</button> 
+      </div>
+	</div>
+  </div>
+</div>
+<script src="/admin/bstable/js/auth.js"></script>
+</body>
+</html>
